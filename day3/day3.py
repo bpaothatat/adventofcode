@@ -18,4 +18,4 @@ def getTotalPriority(filename):
                     break
     return total_score
 
-print(getTotalPriority('data.txt'))
+#print(getTotalPriority('data.txt'))
