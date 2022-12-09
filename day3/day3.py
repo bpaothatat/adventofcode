@@ -18,4 +18,14 @@ def getTotalPriority(filename):
                     break
     return total_score
 
+def getTotalPriority2(filename):
+    total_score = 0
+    with open(filename) as file:
+        lines = file.readlines()
+        for i in range(0, len(lines), 3):
+            intersection = set(lines[i].rstrip()) & set(lines[i +1].rstrip()) & set(lines[i+2].rstrip())
+            total_score += getPriority(intersection.pop())
+    return total_score
+
 #print(getTotalPriority('data.txt'))
+#print(getTotalPriority2('data.txt'))
